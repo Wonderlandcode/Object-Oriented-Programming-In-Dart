@@ -1,0 +1,48 @@
+// Define a class using inheritance
+class Animal {
+  String name;
+  int age;
+
+  Animal(this.name, this.age);
+
+  void makeSound() {
+    print('Some generic sound');
+  }
+}
+
+// Define another class that implements an interface
+class CanFly {
+  void fly() {
+    print('Flying high');
+  }
+}
+
+class Bird extends Animal implements CanFly {
+  Bird(String name, int age) : super(name, age);
+
+  @override
+  void makeSound() {
+    print('Chirp chirp');
+  }
+
+  @override
+  void fly() {
+    print('Bird flying');
+  }
+}
+
+void main() {
+  // Create an instance of Bird
+  var bird = Bird('Sparrow', 2);
+
+  // Call overridden method
+  bird.makeSound();
+
+  // Call method from interface
+  bird.fly();
+
+  // Demonstrate loop
+  for (var i = 0; i < 5; i++) {
+    print('Loop iteration: $i');
+  }
+}
